@@ -1,1 +1,1 @@
-select current_warehouse() as active_warehouse;
+select current_warehouse() as active_warehouse
