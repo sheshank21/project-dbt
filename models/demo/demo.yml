@@ -1,0 +1,12 @@
+version: 2
+
+models: 
+  - name: spotify
+    description: "DBT Model for spotify_history table"
+
+sources:
+  - name: spotify
+    database: DBT_DB
+    schema: PUBLIC
+    tables:
+      - name: SPOTIFY_HISTORY
