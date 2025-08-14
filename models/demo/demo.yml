@@ -9,4 +9,4 @@ sources:
     database: DBT_DB
     schema: PUBLIC
     tables:
-      - name: SPOTIFY_HISTORY
+      - name: SPOTIFY_HISTORY 
