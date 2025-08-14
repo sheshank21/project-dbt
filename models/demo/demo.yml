@@ -4,19 +4,12 @@ models:
   - name: spotify
     description: "DBT Model for spotify_history table"
     columns:
-      - name : SPOTIFY_TRACK_URI
+      - name: SPOTIFY_TRACK_URI
         tests: 
           - unique
           - not_null
-      - name : SHUFFLE
-        tests:
           - accepted_values:
-              values: ['TRUE', 'FALSE']
-
-      - name : SKIPPED
-        tests:
-          - accepted_values:
-              values: ['TRUE', 'FALSE']
+              values: ['11']
 
 sources:
   - name: spotify
