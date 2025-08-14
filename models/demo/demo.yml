@@ -1,19 +1,22 @@
 version: 2
 
 models: 
-  - name: spotify
+  - name: SPOTIFY_IOS_ANDROID
     description: "DBT Model for spotify_history table"
     columns:
       - name: SPOTIFY_TRACK_URI
-        tests: 
-          - unique
+        tests:
           - not_null
+      
+      - name: SHUFFLE
+        tests:
           - accepted_values:
-              values: ['11']
+              values: ['TRUE','FALSE']
+
 
 sources:
-  - name: spotify
+  - name: SPOTIFY_IOS_ANDROID
     database: DBT_DB
     schema: PUBLIC
     tables:
-      - name: SPOTIFY_HISTORY 
+      - name: SPOTIFY_HISTORY
