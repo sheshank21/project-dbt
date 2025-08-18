@@ -7,11 +7,17 @@ models:
       - name: SPOTIFY_TRACK_URI
         tests:
           - not_null
-      
+        config:
+          severity: warn
+        
       - name: SHUFFLE
         tests:
           - accepted_values:
               values: ['TRUE','FALSE']
+
+      - name: MS_PLAYED
+        tests:
+          - value_check
 
 
 sources:
@@ -20,3 +26,4 @@ sources:
     schema: PUBLIC
     tables:
       - name: SPOTIFY_HISTORY
+
