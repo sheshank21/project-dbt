@@ -18,7 +18,9 @@ models:
       - name: MS_PLAYED
         tests:
           - value_check
-
+  
+  - name: retail
+    description: "DB Model for retail data"
 
 sources:
   - name: SPOTIFY_IOS_ANDROID
@@ -26,4 +28,10 @@ sources:
     schema: PUBLIC
     tables:
       - name: SPOTIFY_HISTORY
+
+  - name: retail
+    database: DBT_DB
+    schema: PUBLIC
+    tables:
+      - name: RETAIL_RAW
 
