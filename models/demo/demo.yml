@@ -1,0 +1,37 @@
+version: 2
+
+models: 
+  - name: SPOTIFY_IOS_ANDROID
+    description: "DBT Model for spotify_history table"
+    columns:
+      - name: SPOTIFY_TRACK_URI
+        tests:
+          - not_null
+        config:
+          severity: warn
+        
+      - name: SHUFFLE
+        tests:
+          - accepted_values:
+              values: ['TRUE','FALSE']
+
+      - name: MS_PLAYED
+        tests:
+          - value_check
+  
+  - name: retail
+    description: "DB Model for retail data"
+
+sources:
+  - name: SPOTIFY_IOS_ANDROID
+    database: DBT_DB
+    schema: PUBLIC
+    tables:
+      - name: SPOTIFY_HISTORY
+
+  - name: retail
+    database: DBT_DB
+    schema: PUBLIC
+    tables:
+      - name: RETAIL_RAW
+
