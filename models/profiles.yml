@@ -1,0 +1,13 @@
+my_snowflake_profile:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: OD67148.us-central1.gcp
+      user: sheshankj12
+      role: ACCOUNTADMIN
+      database: DBT_DB
+      warehouse: COMPUTE_WH
+      schema: PUBLIC
+      authenticator: oauth
+      token: "{{ env_var('SNOWFLAKE_PAT') }}"
